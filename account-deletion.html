@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kıymet — Hesap Silme</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #1a1a1a; }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; }
+  code { background: #f2f2f2; padding: 2px 6px; border-radius: 4px; }
+  .note { background: #fff8e1; border-left: 4px solid #d4a418; padding: 12px 16px; margin: 16px 0; }
+</style>
+</head>
+<body>
+  <h1>Kıymet — Hesap ve Bulut Verisi Silme</h1>
+  <p>Bu sayfa, Google Play Console "Hesap Silme" politikası gereği yayınlanmıştır.</p>
+
+  <h2>Uygulama İçinden Silme (önerilen)</h2>
+  <ol>
+    <li>Kıymet uygulamasını aç.</li>
+    <li><strong>Ayarlar &gt; Veri &amp; Güvenlik &gt; "Hesabımı ve Bulut Verilerimi Sil"</strong> adımına git.</li>
+    <li>Onay diyaloğunda "Sil"e dokun.</li>
+  </ol>
+
+  <div class="note">
+    <strong>Not:</strong> Bu işlem yalnızca Google hesap bağlantınızı ve buluttaki
+    şifreli yedeğinizi siler. Cihazınızdaki yerel veriler (işlemler, ayarlar)
+    <strong>ETKİLENMEZ</strong> — onları silmek için ayrı olarak
+    <strong>Ayarlar &gt; "Tüm Veriyi Sıfırla"</strong> kullanmalısınız.
+  </div>
+
+  <h2>Uygulamaya Erişemiyorsanız</h2>
+  <p>
+    Hesabınıza ve buluttaki yedeğinize erişemiyorsanız, kayıtlı Google hesap
+    e-postanızdan <a href="mailto:kiymetapp@gmail.com">kiymetapp@gmail.com</a>
+    adresine "Hesap Silme Talebi" konu başlığıyla yazın. Talebiniz 30 gün
+    içinde işleme alınır.
+  </p>
+
+  <h2>Silinen Veriler</h2>
+  <ul>
+    <li>Firebase Authentication hesap kaydı</li>
+    <li>Firestore'daki şifreli bulut yedeği (<code>backups/&lt;uid&gt;</code> ve alt parçaları)</li>
+  </ul>
+
+  <h2>Silinmeyen Veriler</h2>
+  <ul>
+    <li>Cihazınızdaki yerel şifreli veriler (işlemler, ayarlar, kategoriler) — ayrı olarak silinmelidir.</li>
+  </ul>
+
+  <p>Detaylı bilgi için <a href="privacy-policy-tr.md">Gizlilik Politikası</a> ve
+  <a href="kvkk-aydinlatma.md">KVKK Aydınlatma Metni</a>'ni inceleyebilirsiniz.</p>
+</body>
+</html>

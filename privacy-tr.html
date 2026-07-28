@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kıymet — Gizlilik Politikası</title>
+<style>
+  :root{ --bg:#FAF9F6; --fg:#211F19; --link:#0C6B4F; --card:#F1EFE9; }
+  *{box-sizing:border-box;}
+  body{ background:var(--bg); color:var(--fg); font-family:-apple-system,"Segoe UI",Roboto,sans-serif; max-width:760px; margin:0 auto; padding:40px 20px 80px; line-height:1.7; }
+  h1{ font-size:1.8rem; margin-bottom:.2rem; }
+  h2{ font-size:1.2rem; margin-top:2.2rem; border-bottom:2px solid var(--link); padding-bottom:6px; }
+  p.meta{ opacity:.65; margin-top:0; }
+  .notice{ background:var(--card); border-left:4px solid var(--link); padding:14px 18px; border-radius:6px; margin:18px 0; font-size:.95rem; }
+  table{ width:100%; border-collapse:collapse; margin:12px 0; font-size:.92rem; }
+  th,td{ text-align:left; padding:8px 10px; border-bottom:1px solid rgba(33,31,25,.12); vertical-align:top; }
+  th{ background:var(--card); }
+  a{ color:var(--link); }
+  strong{ color:var(--fg); }
+  .back{ display:inline-block; margin-bottom:18px; font-weight:600; }
+  code{ background:var(--card); padding:1px 5px; border-radius:4px; }
+  footer{ margin-top:56px; font-size:.85rem; opacity:.6; }
+</style>
+</head>
+<body>
+<a class="back" href="index.html">&larr; Hukuki Belgeler</a>
+<h1>Kıymet Gizlilik Politikası</h1>
+<p class="meta">Son güncelleme: 2026-07-26 · Geliştirici: Muhammed Selim Doğan · kiymetapp@gmail.com</p>
+
+<div class="notice">Bu metin bir taslaktır; Sahip yayına geçmeden önce <strong>gerçek bir hukuk danışmanına</strong> göstermelidir. Özellikle KVKK/GDPR bölümleri ve uluslararası veri aktarımı (Firebase/RevenueCat sunucu konumu) kısımları için bağımsız hukuki teyit önerilir.</div>
+
+<h2>1. Giriş</h2>
+<p>Kıymet ("uygulama"), kişisel finansal bilgilerinizin gizliliğini en üst düzeyde korumayı taahhüt eder. Bu politika, hangi verilerin ne amaçla toplandığını, nerede saklandığını ve kiminle paylaşıldığını açıklar. Uygulama <strong>çoklu profil</strong> desteği sunar (aynı cihazda en fazla 5 profil); bu politika her profil için aynı şekilde geçerlidir.</p>
+
+<h2>2. Veri Saklama — Cihaz-İçi (Local-First) Yaklaşım</h2>
+<p><strong>Finansal verileriniz (harcama/gelir/yatırım/borç tutarları, kategoriler, notlar, kur snapshot'ları, bütçe/hedef/kredi kartı/abonelik kayıtları) cihazınızda saklanır ve varsayılan olarak hiçbir sunucuya gönderilmez.</strong></p>
+<ul>
+  <li><strong>Şifreleme:</strong> Tüm veriler AES-256 ile şifrelidir. Şifreleme anahtarı Android Keystore / iOS Keychain ile korunur.</li>
+  <li><strong>Çoklu profil:</strong> Her profilin verisi aynı cihazda, aynı şifreleme yöntemiyle ayrı ayrı saklanır. Profiller arası veri paylaşımı yalnızca siz açıkça bir işlem yaparsanız gerçekleşir.</li>
+  <li><strong>Yerel yedek:</strong> İsteğe bağlı şifreli <code>.kbk</code> yedek dosyası oluşturabilir, istediğiniz kanaldan paylaşabilirsiniz. Parola kaybolursa yedek açılamaz, geliştirici de açamaz.</li>
+</ul>
+
+<h2>3. Mikrofon — Sesli İşlem Kaydı</h2>
+<p>Ses tanıma <strong>cihaz üzerinde</strong> yapılır (işletim sisteminin yerleşik konuşma tanıma motoru): ham ses kaydı hiçbir zaman diske yazılmaz veya sunucuya gönderilmez; yalnızca tanınan metin anlık işlenip ilgili işlem alanlarına dönüştürülür ve şifreli olarak saklanır. Mikrofon izni vermezseniz sadece sesli kayıt özelliği kullanılamaz.</p>
+
+<h2>4. Kamera — Fiş/Ekran Görüntüsü Tarama (OCR)</h2>
+<p>Fiş ve portföy ekran görüntüsü tarama, <strong>cihaz üzerinde</strong> (Google ML Kit — internete görsel gönderilmez) işlenir. Ham fotoğraf kaydedilmez veya sunucuya iletilmez; yalnızca çıkarılan ürün/tutar/tarih bilgisi, onayınızdan sonra cihazda şifreli saklanır.</p>
+
+<h2>5. Google ile Giriş ve Bulut Yedek</h2>
+<p>"Google ile Giriş Yap" tercih ederseniz ad ve e-posta bilginiz kimlik doğrulama için alınır. İsteğe bağlı şifreli bulut yedek özelliğini açarsanız, yerel yedeğinizle aynı formattaki veri, sizin belirlediğiniz ayrı bir parolayla şifrelenip Google Firestore'da saklanır. <strong>Bu parola yalnızca cihazınızın güvenli deposunda tutulur, sunucuya asla gönderilmez</strong> — geliştirici dahil hiç kimse parola olmadan bulut yedeğinizi çözemez. Google hesap bilgisi finansal verinizle ilişkilendirilmez.</p>
+
+<h2>6. Üçüncü Taraf Piyasa Veri API'leri</h2>
+<table>
+<tr><th>Hizmet</th><th>Amaç</th><th>Gönderilen Veri</th></tr>
+<tr><td>Frankfurter (api.frankfurter.dev)</td><td>USD/EUR kuru</td><td>Kur çifti — kişisel veri yok</td></tr>
+<tr><td>Truncgil (finans.truncgil.com)</td><td>Gram altın kuru</td><td>Kur talebi — kişisel veri yok</td></tr>
+<tr><td>CoinGecko / Binance</td><td>BTC/TRY, altın (PAXG) yedeği</td><td>Sembol/çift — kişisel veri yok</td></tr>
+<tr><td>Yahoo Finance</td><td>BIST hisse fiyatı</td><td>Sembol — kişisel veri yok</td></tr>
+<tr><td>EODHD (opsiyonel)</td><td>BIST hisse fiyatı (birincil)</td><td>Sembol — kişisel veri yok</td></tr>
+</table>
+
+<h2>7. Ödeme ve Abonelik</h2>
+<p>Premium abonelik Google Play Faturalandırma ve RevenueCat aracılığıyla işlenir. Ödeme bilgileriniz Google Play tarafından işlenir, uygulama/geliştirici görmez. RevenueCat abonelik durumunuzu anonim bir kimlikle tutar.</p>
+
+<h2>8. Analiz, Tanılama ve Reklam</h2>
+<ul>
+  <li><strong>Firebase Crashlytics:</strong> Çökme/hata tanılama (kişisel/finansal veri içermez), Ayarlar'dan kapatılabilir.</li>
+  <li><strong>Firebase Analytics:</strong> Ürün kullanım ölçümü, kişisel/finansal veri içermez, Ayarlar'dan kapatılabilir.</li>
+  <li><strong>Google AdMob:</strong> Premium olmayan kullanıcılara reklam gösterir (premium'da hiç yüklenmez). Reklam kimliği/cihaz bilgisi toplayabilir. iOS'ta App Tracking Transparency izni sorulur; reddedilirse reklamlar kişiselleştirilmemiş gösterilir. Android'de AD_ID izni gereklidir.</li>
+</ul>
+
+<h2>9. Çocukların Gizliliği</h2>
+<p>Uygulama 13 yaşın altındaki kullanıcılara yönelik değildir ve bu yaş grubundan bilerek veri toplamaz.</p>
+
+<h2>10. Veri Aktarımı ve Uluslararası Sunucular</h2>
+<p>Google (Firebase/Firestore, AdMob) ve RevenueCat sunucuları Türkiye dışında olabilir. Finansal veriniz bu aktarımın dışındadır — yalnız cihazda kalır.</p>
+
+<h2>11. GDPR — AB Kullanıcı Hakları</h2>
+<ul>
+  <li>Erişim hakkı</li>
+  <li>Silme hakkı — "Tüm Verileri Temizle" ve "Hesabımı ve Bulut Verilerimi Sil"</li>
+  <li>Taşınabilirlik — şifreli <code>.kbk</code> yedek</li>
+  <li>İtiraz — otomatik profilleme yok</li>
+</ul>
+
+<h2>12. Değişiklikler</h2>
+<p>Politika önemli ölçüde değiştiğinde uygulama içinde bildirim yapılır.</p>
+
+<h2>13. İletişim</h2>
+<p>kiymetapp@gmail.com</p>
+
+<footer>Kıymet — Muhammed Selim Doğan</footer>
+</body>
+</html>

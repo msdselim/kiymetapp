@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kıymet — Privacy Policy</title>
+<style>
+  :root{ --bg:#FAF9F6; --fg:#211F19; --link:#0C6B4F; --card:#F1EFE9; }
+  *{box-sizing:border-box;}
+  body{ background:var(--bg); color:var(--fg); font-family:-apple-system,"Segoe UI",Roboto,sans-serif; max-width:760px; margin:0 auto; padding:40px 20px 80px; line-height:1.7; }
+  h1{ font-size:1.8rem; margin-bottom:.2rem; }
+  h2{ font-size:1.2rem; margin-top:2.2rem; border-bottom:2px solid var(--link); padding-bottom:6px; }
+  p.meta{ opacity:.65; margin-top:0; }
+  .notice{ background:var(--card); border-left:4px solid var(--link); padding:14px 18px; border-radius:6px; margin:18px 0; font-size:.95rem; }
+  table{ width:100%; border-collapse:collapse; margin:12px 0; font-size:.92rem; }
+  th,td{ text-align:left; padding:8px 10px; border-bottom:1px solid rgba(33,31,25,.12); vertical-align:top; }
+  th{ background:var(--card); }
+  a{ color:var(--link); }
+  strong{ color:var(--fg); }
+  .back{ display:inline-block; margin-bottom:18px; font-weight:600; }
+  code{ background:var(--card); padding:1px 5px; border-radius:4px; }
+  footer{ margin-top:56px; font-size:.85rem; opacity:.6; }
+</style>
+</head>
+<body>
+<a class="back" href="index.html">&larr; Legal Documents</a>
+<h1>Kıymet Privacy Policy</h1>
+<p class="meta">Last updated: 2026-07-26 · Developer: Muhammed Selim Doğan · kiymetapp@gmail.com</p>
+
+<div class="notice">This is a draft prepared with a code-consistency check, not a substitute for legal counsel. The owner should have this reviewed by a qualified lawyer before publishing, especially the international-transfer and consumer-rights sections.</div>
+
+<h2>1. Introduction</h2>
+<p>Kıymet ("the app") is committed to protecting the privacy of your personal financial information. The app supports <strong>multiple profiles</strong> (up to 5 on the same device); this policy applies identically to every profile.</p>
+
+<h2>2. Data Storage — Local-First Approach</h2>
+<p><strong>Your financial data is stored on your device and is not sent to any server by default.</strong></p>
+<ul>
+  <li><strong>Encryption:</strong> AES-256, key protected by Android Keystore / iOS Keychain.</li>
+  <li><strong>Multiple profiles:</strong> Each profile's data is stored separately, under the same encryption.</li>
+  <li><strong>Local backup:</strong> Optional encrypted <code>.kbk</code> file, password-protected by you. If the password is lost, nobody — including the developer — can open it.</li>
+</ul>
+
+<h2>3. Microphone — Voice Entry</h2>
+<p>Speech recognition runs <strong>on-device</strong>. Raw audio is never written to disk or sent to a server; only the recognized text is used to fill transaction fields, and that text is stored encrypted. Declining the permission only disables voice entry.</p>
+
+<h2>4. Camera — Receipt / Screenshot Scanning (OCR)</h2>
+<p>Receipt and portfolio-screenshot scanning is processed <strong>on-device</strong> (Google ML Kit — no image is uploaded). The raw photo is never saved or transmitted; only the extracted text, after your confirmation, is stored encrypted.</p>
+
+<h2>5. Google Sign-In and Cloud Backup</h2>
+<p>If you sign in with Google, your name and email are used for authentication. The optional encrypted cloud backup uses a separate password you choose, encrypted before it ever leaves your device. <strong>This password is kept only in your device's secure storage and never sent to the server</strong> — no one, including the developer, can decrypt it without that password. Your Google account is not linked to your financial data.</p>
+
+<h2>6. Third-Party Market Data APIs</h2>
+<table>
+<tr><th>Service</th><th>Purpose</th><th>Data Sent</th></tr>
+<tr><td>Frankfurter (api.frankfurter.dev)</td><td>USD/EUR rate</td><td>Currency pair — no personal data</td></tr>
+<tr><td>Truncgil (finans.truncgil.com)</td><td>Gold-gram rate</td><td>Rate request — no personal data</td></tr>
+<tr><td>CoinGecko / Binance</td><td>BTC/TRY price, gold (PAXG) fallback</td><td>Symbol/pair — no personal data</td></tr>
+<tr><td>Yahoo Finance</td><td>BIST stock price</td><td>Symbol — no personal data</td></tr>
+<tr><td>EODHD (optional)</td><td>BIST stock price (primary)</td><td>Symbol — no personal data</td></tr>
+</table>
+
+<h2>7. Payment and Subscription</h2>
+<p>Premium subscription is processed via Google Play Billing and RevenueCat. Payment details are handled by Google Play; the app/developer never sees them.</p>
+
+<h2>8. Analytics, Diagnostics and Advertising</h2>
+<ul>
+  <li><strong>Firebase Crashlytics:</strong> Crash diagnostics, no personal/financial data, can be turned off in Settings.</li>
+  <li><strong>Firebase Analytics:</strong> Usage measurement, no personal/financial data, can be turned off in Settings.</li>
+  <li><strong>Google AdMob:</strong> Ads shown to non-premium users (never loaded for premium). May collect an advertising identifier and device info. ATT prompt shown on iOS; AD_ID permission required on Android.</li>
+</ul>
+
+<h2>9. Children's Privacy</h2>
+<p>The app is not directed at children under 13 and does not knowingly collect data from that age group.</p>
+
+<h2>10. Data Transfer and International Servers</h2>
+<p>Google and RevenueCat servers may be outside Turkey. Your financial data is excluded from this transfer — it stays on-device.</p>
+
+<h2>11. GDPR — Rights of EU/EEA Users</h2>
+<ul>
+  <li>Access</li>
+  <li>Erasure — "Clear All Data" and "Delete My Account and Cloud Data"</li>
+  <li>Portability — encrypted <code>.kbk</code> backup</li>
+  <li>Objection — no automated profiling</li>
+</ul>
+
+<h2>12. Changes</h2>
+<p>You will be notified in-app of material changes.</p>
+
+<h2>13. Contact</h2>
+<p>kiymetapp@gmail.com</p>
+
+<footer>Kıymet — Muhammed Selim Doğan</footer>
+</body>
+</html>
