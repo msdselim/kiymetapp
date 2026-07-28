@@ -41,7 +41,7 @@
 </ul>
 
 <h2>3. Microphone — Voice Entry</h2>
-<p>Speech recognition runs <strong>on-device</strong>. Raw audio is never written to disk or sent to a server; only the recognized text is used to fill transaction fields, and that text is stored encrypted. Declining the permission only disables voice entry.</p>
+<p>Speech recognition runs via the operating system's built-in speech engine. Raw audio is never written to disk, but during recognition your voice may be sent momentarily to the platform's speech-recognition service (Google on Android, Apple on iOS) for processing — these services use it only to produce text, not as a stored recording. The recognized text is used to fill transaction fields and is stored encrypted. Declining the permission only disables voice entry.</p>
 
 <h2>4. Camera — Receipt / Screenshot Scanning (OCR)</h2>
 <p>Receipt and portfolio-screenshot scanning is processed <strong>on-device</strong> (Google ML Kit — no image is uploaded). The raw photo is never saved or transmitted; only the extracted text, after your confirmation, is stored encrypted.</p>
@@ -73,7 +73,7 @@
 <p>The app is not directed at children under 13 and does not knowingly collect data from that age group.</p>
 
 <h2>10. Data Transfer and International Servers</h2>
-<p>Google and RevenueCat servers may be outside Turkey. Your financial data is excluded from this transfer — it stays on-device.</p>
+<p>Google (including Android speech recognition), Apple (iOS speech recognition), and RevenueCat servers may be outside Turkey. Your financial data is excluded from this transfer — it stays on-device.</p>
 
 <h2>11. GDPR — Rights of EU/EEA Users</h2>
 <ul>

@@ -41,7 +41,7 @@
 </ul>
 
 <h2>3. Mikrofon — Sesli İşlem Kaydı</h2>
-<p>Ses tanıma <strong>cihaz üzerinde</strong> yapılır (işletim sisteminin yerleşik konuşma tanıma motoru): ham ses kaydı hiçbir zaman diske yazılmaz veya sunucuya gönderilmez; yalnızca tanınan metin anlık işlenip ilgili işlem alanlarına dönüştürülür ve şifreli olarak saklanır. Mikrofon izni vermezseniz sadece sesli kayıt özelliği kullanılamaz.</p>
+<p>Ses tanıma işletim sisteminin yerleşik konuşma tanıma motoru üzerinden yapılır: ham ses kaydı hiçbir zaman diske yazılmaz, ancak tanıma sırasında sesiniz platformun konuşma tanıma servisine (Android'de Google, iOS'ta Apple) anlık olarak iletilip işlenebilir. Bu servisler sesi yalnızca metne çevirmek için kullanır, kayıt olarak saklamaz. Tanınan metin ilgili işlem alanlarına dönüştürülür ve cihazda şifreli olarak saklanır. Mikrofon izni vermezseniz sadece sesli kayıt özelliği kullanılamaz.</p>
 
 <h2>4. Kamera — Fiş/Ekran Görüntüsü Tarama (OCR)</h2>
 <p>Fiş ve portföy ekran görüntüsü tarama, <strong>cihaz üzerinde</strong> (Google ML Kit — internete görsel gönderilmez) işlenir. Ham fotoğraf kaydedilmez veya sunucuya iletilmez; yalnızca çıkarılan ürün/tutar/tarih bilgisi, onayınızdan sonra cihazda şifreli saklanır.</p>
@@ -73,7 +73,7 @@
 <p>Uygulama 13 yaşın altındaki kullanıcılara yönelik değildir ve bu yaş grubundan bilerek veri toplamaz.</p>
 
 <h2>10. Veri Aktarımı ve Uluslararası Sunucular</h2>
-<p>Google (Firebase/Firestore, AdMob) ve RevenueCat sunucuları Türkiye dışında olabilir. Finansal veriniz bu aktarımın dışındadır — yalnız cihazda kalır.</p>
+<p>Google (Firebase/Firestore, AdMob, Android konuşma tanıma), Apple (iOS konuşma tanıma) ve RevenueCat sunucuları Türkiye dışında olabilir. Finansal veriniz bu aktarımın dışındadır — yalnız cihazda kalır.</p>
 
 <h2>11. GDPR — AB Kullanıcı Hakları</h2>
 <ul>
