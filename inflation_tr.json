@@ -1,6 +1,6 @@
 {
-  "source": "TCMB EVDS TP.FE25.OKTG01 (TÜFE genel endeks) — yıllık değişim tool/update_inflation.dart tarafından hesaplandı",
-  "updatedAt": "2026-09-05",
+  "source": "TCMB EVDS TP.TUKFIY2025.GENEL (TÜFE genel endeks) — yıllık değişim tool/update_inflation.dart tarafından hesaplandı",
+  "updatedAt": "2026-10-07",
   "series": [
     {
       "ym": "2023-08",
@@ -149,6 +149,10 @@
     {
       "ym": "2026-08",
       "yoy": 31.51
+    },
+    {
+      "ym": "2026-09",
+      "yoy": 29.73
     }
   ]
 }
