@@ -25,7 +25,7 @@
 <body>
 <a class="back" href="index.html">&larr; Legal Documents</a>
 <h1>Kıymet Privacy Policy</h1>
-<p class="meta">Last updated: 2026-07-26 · Developer: Muhammed Selim Doğan · kiymetapp@gmail.com</p>
+<p class="meta">Last updated: 2026-10-12 · Developer: Muhammed Selim Doğan · kiymetapp@gmail.com</p>
 
 <div class="notice">This is a draft prepared with a code-consistency check, not a substitute for legal counsel. The owner should have this reviewed by a qualified lawyer before publishing, especially the international-transfer and consumer-rights sections.</div>
 
@@ -41,13 +41,13 @@
 </ul>
 
 <h2>3. Microphone — Voice Entry</h2>
-<p>Speech recognition runs via the operating system's built-in speech engine. Raw audio is never written to disk, but during recognition your voice may be sent momentarily to the platform's speech-recognition service (Google on Android, Apple on iOS) for processing — these services use it only to produce text, not as a stored recording. The recognized text is used to fill transaction fields and is stored encrypted. Declining the permission only disables voice entry.</p>
+<p>Speech recognition runs via the operating system's built-in speech engine (the <code>speech_to_text</code> package). Raw audio is never written to disk, but during recognition your voice may be sent momentarily to the platform's speech-recognition service (Google on Android, Apple on iOS) for processing — these services use it only to produce text, not as a stored recording. The recognized text is used to fill transaction fields and is stored encrypted. Declining the permission only disables voice entry.</p>
 
 <h2>4. Camera — Receipt / Screenshot Scanning (OCR)</h2>
 <p>Receipt and portfolio-screenshot scanning is processed <strong>on-device</strong> (Google ML Kit — no image is uploaded). The raw photo is never saved or transmitted; only the extracted text, after your confirmation, is stored encrypted.</p>
 
 <h2>5. Google Sign-In and Cloud Backup</h2>
-<p>If you sign in with Google, your name and email are used for authentication. The optional encrypted cloud backup uses a separate password you choose, encrypted before it ever leaves your device. <strong>This password is kept only in your device's secure storage and never sent to the server</strong> — no one, including the developer, can decrypt it without that password. Your Google account is not linked to your financial data.</p>
+<p>If you sign in with Google, your name, email address and account ID are obtained through Google's official sign-in component (the <code>google_sign_in</code> package) and used only to authenticate you to your cloud backup — never for advertising or profiling. The optional encrypted cloud backup uses a separate password you choose, encrypted before it ever leaves your device. <strong>This password is kept only in your device's secure storage and never sent to the server</strong> — no one, including the developer, can decrypt it without that password. Your Google account is not linked to your financial data.</p>
 
 <h2>6. Third-Party Market Data APIs</h2>
 <table>
@@ -60,13 +60,15 @@
 </table>
 
 <h2>7. Payment and Subscription</h2>
-<p>Premium subscription is processed via Google Play Billing and RevenueCat. Payment details are handled by Google Play; the app/developer never sees them.</p>
+<p><strong>Android (Google Play):</strong> Premium subscription is processed via Google Play Billing and RevenueCat. Payment details are handled by Google Play; the app/developer never sees them.</p>
+<p><strong>iOS (App Store):</strong> The iOS version has no in-app purchases or subscriptions. No payments are taken in the app and no payment information is processed. RevenueCat is not used on iOS. All features are free; the app is supported by ads.</p>
 
 <h2>8. Analytics, Diagnostics and Advertising</h2>
 <ul>
   <li><strong>Firebase Crashlytics:</strong> Crash diagnostics, no personal/financial data, can be turned off in Settings.</li>
   <li><strong>Firebase Analytics:</strong> Usage measurement, no personal/financial data, can be turned off in Settings.</li>
-  <li><strong>Google AdMob:</strong> Ads shown to non-premium users (never loaded for premium). May collect an advertising identifier and device info. ATT prompt shown on iOS; AD_ID permission required on Android.</li>
+  <li><strong>Google AdMob:</strong> Shows ads (on Android, never loaded for premium users). May collect an advertising identifier and device info. AD_ID permission required on Android.</li>
+  <li><strong>iOS tracking permission (App Tracking Transparency):</strong> On first launch, before the ads SDK starts and before any data that could be used for tracking is collected, the app shows the system tracking permission prompt. If you allow it, the advertising identifier (IDFA) may be used for interest-based ads. If you decline, the IDFA is never used, ads are shown as non-personalized only, and no second tracking or consent prompt is shown. You can change your choice anytime in iOS Settings &gt; Privacy &amp; Security &gt; Tracking.</li>
 </ul>
 
 <h2>9. Children's Privacy</h2>

@@ -25,7 +25,7 @@
 <body>
 <a class="back" href="index.html">&larr; Hukuki Belgeler</a>
 <h1>Kıymet Gizlilik Politikası</h1>
-<p class="meta">Son güncelleme: 2026-07-26 · Geliştirici: Muhammed Selim Doğan · kiymetapp@gmail.com</p>
+<p class="meta">Son güncelleme: 2026-10-12 · Geliştirici: Muhammed Selim Doğan · kiymetapp@gmail.com</p>
 
 <div class="notice">Bu metin bir taslaktır; Sahip yayına geçmeden önce <strong>gerçek bir hukuk danışmanına</strong> göstermelidir. Özellikle KVKK/GDPR bölümleri ve uluslararası veri aktarımı (Firebase/RevenueCat sunucu konumu) kısımları için bağımsız hukuki teyit önerilir.</div>
 
@@ -41,13 +41,13 @@
 </ul>
 
 <h2>3. Mikrofon — Sesli İşlem Kaydı</h2>
-<p>Ses tanıma işletim sisteminin yerleşik konuşma tanıma motoru üzerinden yapılır: ham ses kaydı hiçbir zaman diske yazılmaz, ancak tanıma sırasında sesiniz platformun konuşma tanıma servisine (Android'de Google, iOS'ta Apple) anlık olarak iletilip işlenebilir. Bu servisler sesi yalnızca metne çevirmek için kullanır, kayıt olarak saklamaz. Tanınan metin ilgili işlem alanlarına dönüştürülür ve cihazda şifreli olarak saklanır. Mikrofon izni vermezseniz sadece sesli kayıt özelliği kullanılamaz.</p>
+<p>Ses tanıma işletim sisteminin yerleşik konuşma tanıma motoru (<code>speech_to_text</code> paketi) üzerinden yapılır: ham ses kaydı hiçbir zaman diske yazılmaz, ancak tanıma sırasında sesiniz platformun konuşma tanıma servisine (Android'de Google, iOS'ta Apple) anlık olarak iletilip işlenebilir. Bu servisler sesi yalnızca metne çevirmek için kullanır, kayıt olarak saklamaz. Tanınan metin ilgili işlem alanlarına dönüştürülür ve cihazda şifreli olarak saklanır. Mikrofon izni vermezseniz sadece sesli kayıt özelliği kullanılamaz.</p>
 
 <h2>4. Kamera — Fiş/Ekran Görüntüsü Tarama (OCR)</h2>
 <p>Fiş ve portföy ekran görüntüsü tarama, <strong>cihaz üzerinde</strong> (Google ML Kit — internete görsel gönderilmez) işlenir. Ham fotoğraf kaydedilmez veya sunucuya iletilmez; yalnızca çıkarılan ürün/tutar/tarih bilgisi, onayınızdan sonra cihazda şifreli saklanır.</p>
 
 <h2>5. Google ile Giriş ve Bulut Yedek</h2>
-<p>"Google ile Giriş Yap" tercih ederseniz ad ve e-posta bilginiz kimlik doğrulama için alınır. İsteğe bağlı şifreli bulut yedek özelliğini açarsanız, yerel yedeğinizle aynı formattaki veri, sizin belirlediğiniz ayrı bir parolayla şifrelenip Google Firestore'da saklanır. <strong>Bu parola yalnızca cihazınızın güvenli deposunda tutulur, sunucuya asla gönderilmez</strong> — geliştirici dahil hiç kimse parola olmadan bulut yedeğinizi çözemez. Google hesap bilgisi finansal verinizle ilişkilendirilmez.</p>
+<p>"Google ile Giriş Yap" tercih ederseniz, Google'ın resmî giriş bileşeni (<code>google_sign_in</code> paketi) üzerinden ad, e-posta ve hesap kimliği bilginiz alınır ve Firebase Authentication ile doğrulanır. Bu bilgi yalnızca bulut yedeğinize giriş yapmak için kullanılır; reklam veya profilleme için kullanılmaz. İsteğe bağlı şifreli bulut yedek özelliğini açarsanız, yerel yedeğinizle aynı formattaki veri, sizin belirlediğiniz ayrı bir parolayla şifrelenip Google Firestore'da saklanır. <strong>Bu parola yalnızca cihazınızın güvenli deposunda tutulur, sunucuya asla gönderilmez</strong> — geliştirici dahil hiç kimse parola olmadan bulut yedeğinizi çözemez. Google hesap bilgisi finansal verinizle ilişkilendirilmez.</p>
 
 <h2>6. Üçüncü Taraf Piyasa Veri API'leri</h2>
 <table>
@@ -60,13 +60,15 @@
 </table>
 
 <h2>7. Ödeme ve Abonelik</h2>
-<p>Premium abonelik Google Play Faturalandırma ve RevenueCat aracılığıyla işlenir. Ödeme bilgileriniz Google Play tarafından işlenir, uygulama/geliştirici görmez. RevenueCat abonelik durumunuzu anonim bir kimlikle tutar.</p>
+<p><strong>Android (Google Play):</strong> Premium abonelik Google Play Faturalandırma ve RevenueCat aracılığıyla işlenir. Ödeme bilgileriniz Google Play tarafından işlenir, uygulama/geliştirici görmez. RevenueCat abonelik durumunuzu anonim bir kimlikle tutar.</p>
+<p><strong>iOS (App Store):</strong> iOS sürümünde uygulama içi satın alma veya abonelik yoktur; uygulama içinde hiçbir ödeme alınmaz ve ödeme bilgisi işlenmez. RevenueCat iOS'ta kullanılmaz. Tüm özellikler ücretsizdir; uygulama reklamlarla desteklenir.</p>
 
 <h2>8. Analiz, Tanılama ve Reklam</h2>
 <ul>
   <li><strong>Firebase Crashlytics:</strong> Çökme/hata tanılama (kişisel/finansal veri içermez), Ayarlar'dan kapatılabilir.</li>
   <li><strong>Firebase Analytics:</strong> Ürün kullanım ölçümü, kişisel/finansal veri içermez, Ayarlar'dan kapatılabilir.</li>
-  <li><strong>Google AdMob:</strong> Premium olmayan kullanıcılara reklam gösterir (premium'da hiç yüklenmez). Reklam kimliği/cihaz bilgisi toplayabilir. iOS'ta App Tracking Transparency izni sorulur; reddedilirse reklamlar kişiselleştirilmemiş gösterilir. Android'de AD_ID izni gereklidir.</li>
+  <li><strong>Google AdMob:</strong> Reklam gösterir (Android'de premium kullanıcıda hiç yüklenmez). Reklam kimliği/cihaz bilgisi toplayabilir. Android'de AD_ID izni gereklidir.</li>
+  <li><strong>iOS'ta izleme izni (App Tracking Transparency):</strong> Uygulama ilk açılışta, reklam altyapısı başlamadan ve izlemeye yarayabilecek herhangi bir veri toplanmadan önce sistemin izleme izni penceresini gösterir. İzin verirseniz reklam kimliği (IDFA) ilgi alanına göre reklam için kullanılabilir. İzin vermezseniz IDFA hiç kullanılmaz, reklamlar yalnız kişiselleştirilmemiş gösterilir ve izleme amaçlı ikinci bir izin/rıza ekranı gösterilmez. Tercihinizi istediğiniz an iOS Ayarlar &gt; Gizlilik ve Güvenlik &gt; İzleme bölümünden değiştirebilirsiniz.</li>
 </ul>
 
 <h2>9. Çocukların Gizliliği</h2>
